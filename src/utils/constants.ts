@@ -37,3 +37,9 @@ export const RATE_LIMITER = {
   STANDART_HEADER: process.env.LIMITER_STANDART || true,
   LEGACY_HEADER: process.env.LIMITER_LEGACY || true,
 };
+
+export const MONITOR = {
+  PATH: process.env.MONITOR_PATH || "/status",
+  PASSWORD: process.env.MONITOR_PASSWORD || "password",
+  USERNAME: process.env.MONITOR_USERNAME || "username",
+};
