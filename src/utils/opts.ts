@@ -1,7 +1,7 @@
 import { format, transports } from "winston";
 const { combine, timestamp, label, printf, colorize, json } = format;
 
-import { ENV_ENUMS, CORS, WINSTON } from "./constants";
+import { ENV_ENUMS, CORS, WINSTON, RATE_LIMITER } from "./constants";
 
 // Morgan Options
 export const MORGAN_OPTS =
@@ -36,4 +36,11 @@ export const WINSTON_OPTS = {
     }),
   ],
   defaultMeta: { service: WINSTON.label },
+};
+
+export const LIMITER_OPTS = {
+  max: Number(RATE_LIMITER.MAX),
+  windowMs: Number(RATE_LIMITER.WINDOW_MS) * 60 * 1000,
+  legacyHeaders: RATE_LIMITER.LEGACY_HEADER === "true",
+  standardHeaders: RATE_LIMITER.STANDART_HEADER === "true",
 };

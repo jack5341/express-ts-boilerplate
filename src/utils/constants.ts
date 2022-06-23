@@ -30,3 +30,10 @@ export const CORS = {
 export const WINSTON = {
   label: process.env.WINSTON_LABEL || "express-boilerplate",
 };
+
+export const RATE_LIMITER = {
+  WINDOW_MS: process.env.RATE_LIMITER || "15",
+  MAX: process.env.LIMITER_MAX || 50,
+  STANDART_HEADER: process.env.LIMITER_STANDART || true,
+  LEGACY_HEADER: process.env.LIMITER_LEGACY || true,
+};
