@@ -32,7 +32,7 @@ export const WINSTON = {
 };
 
 export const RATE_LIMITER = {
-  WINDOW_MS: process.env.RATE_LIMITER || "15",
+  WINDOW_MS: process.env.LIMITER_WINDOWMS || "15",
   MAX: process.env.LIMITER_MAX || 50,
   STANDART_HEADER: process.env.LIMITER_STANDART || true,
   LEGACY_HEADER: process.env.LIMITER_LEGACY || true,
