@@ -2,6 +2,7 @@ import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import ratelimit from "express-rate-limit";
+import statusMonitor from "express-status-monitor";
 import cors from "cors";
 const app = express();
 
@@ -16,6 +17,7 @@ import Hi from "./routers/hi/hi.router";
 // Middlewares
 app.use(helmet());
 app.use(ratelimit(LIMITER_OPTS));
+app.use(statusMonitor());
 app.use(cors(CORS_OPTS));
 app.use(morgan(MORGAN_OPTS));
 
